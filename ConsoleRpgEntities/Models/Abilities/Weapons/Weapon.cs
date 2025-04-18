@@ -1,19 +1,18 @@
-﻿using ConsoleRpgEntities.Models.Abilities.PlayerAbilities;
 using ConsoleRpgEntities.Models.Attributes;
 using ConsoleRpgEntities.Models.Characters;
 
 namespace ConsoleRpgEntities.Models.Abilities
 {
-    public abstract class Ability : IAbility
+    public abstract class Weapon : IAbility
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string AbilityType { get; set; }
+        public int BonusDmg { get; set; }
 
         public virtual IEnumerable<Player> Players { get; set; }
 
-        protected Ability()
+        protected Weapon()
         {
             Players = new List<Player>();
         }
